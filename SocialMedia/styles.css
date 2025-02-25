@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Merriweather Sans", serif;
+  font-weight: 800;
+  font-style: normal;
+  color: #fff;
+  /* background:url('https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') ; */
+}
+
+.merriweather-black {
+  font-family: "Merriweather Sans", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.social-media {
+  display: flex; /* Si quieres seguir usando flexbox para la disposición interna de los items */
+  flex-direction: column; /* O row, depende de cómo quieras que se apilen inicialmente */
+  /* ... otros estilos del contenedor si los necesitas ... */
+  overflow: hidden; /* Importante para que el desplazamiento vertical no cause scroll */
+  align-items: center;
+  justify-content: center;
+  background: rgba(99, 14, 116, 0.6);
+  padding: 15px;
+  font-size: 72px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  height: 140px;
+  
+}
+
+
+/* Estilo para cada "diapositiva" (social-item) */
+.social-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute; /* Importante: para que translateY funcione relativo a su posición normal */
+  opacity: 0; /* Opcional: Puedes mantener opacity: 0 para un fundido combinado */
+  transform: translateY(100%); /* **Inicialmente, desplaza el elemento completamente hacia abajo (oculto)** */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transición para transform y opacidad (opcional) */
+  /* NOTA: Ya no usamos display: none ni display: flex aquí */
+}
+
+/* Estilo para la "diapositiva activa" */
+.social-item.active {
+  /* ... (mantén estilos que no sean display) ... */
+  opacity: 1; /* Opcional: Vuelve a opacity: 1 para el fundido si lo usas */
+  transform: translateY(0%); /* **En estado activo, vuelve a la posición normal (desplazamiento 0)** */
+  /* NOTA: Ya no usamos display: flex aquí */
+}
+
+/* Estilo para el SVG dentro de cada diapositiva (opcional - ajusta según necesites) */
+.social-item svg {
+  width: 72px;
+  height: 72px;
+  margin-right: 10px;
+}
